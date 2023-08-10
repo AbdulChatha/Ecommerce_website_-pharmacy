@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <title>Admin Panel</title>
+    <link href="bootstrap.css" rel="stylesheet"/>
+    <style>
+        .adminimage{
+            width:40px;
+            height:40px;
+            border-radius:50%;
+
+        }
+        .search
+        {
+            width:80%;
+        }
+        .btn_container
+        {
+            display:flex;
+            width:100%;
+            height:70px;
+            justify-content:center;
+            align-items:center;
+            border-bottom: 2px solid lightgray;
+           
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <h3>Admin Panel</h3>
+                <div class="col">
+                    <input type="search" class="form-control" placeholder="search"/>
+                </div>
+                <asp:LinkButton runat="server" Text="Logout" CssClass="btn" PostBackUrl="~/Logout.aspx"></asp:LinkButton>
+                <asp:Image runat="server" ImageUrl="~/images/admin.jpg" CssClass="adminimage" />
+
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-2">
+                 <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="DashBoard" ></asp:LinkButton>
+                 </div>
+                    <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="Products" PostBackUrl="~/ProductList.aspx"></asp:LinkButton>
+                 </div>
+                    <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="Orders"></asp:LinkButton>
+                 </div>
+                    <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="Customers"></asp:LinkButton>
+                 </div>
+                    <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="Reviews"></asp:LinkButton>
+                 </div>
+                    <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="Transactions"></asp:LinkButton>
+                 </div>
+                    <div class="btn_container">
+                     <asp:LinkButton runat="server"  Text="Settings"></asp:LinkButton>
+                 </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-md-10">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

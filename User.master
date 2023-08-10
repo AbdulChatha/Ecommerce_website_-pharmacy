@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="bootstrap.css" rel="stylesheet"/>
+    <style>
+        .logoimage{
+            height:70px;
+            border-radius:40%;
+        }
+        .navbar
+        {
+            height:100px;
+            background-color:rgb(50,174,177);
+        }
+        .btn
+        {
+            color:white;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+               <asp:Image runat="server" ImageUrl="~/images/logo.png" CssClass="logoimage" />
+                <div class="col">
+                    <input type="search" class="form-control" placeholder="search" style="height:40px"/>
+                </div>
+               <asp:LinkButton runat="server" Text="Cart" CssClass="btn"></asp:LinkButton>
+                <asp:LinkButton runat="server" Text="Login" CssClass="btn"></asp:LinkButton>
+              <asp:LinkButton runat="server" Text="Signup" CssClass="btn"></asp:LinkButton>
+            </nav>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
